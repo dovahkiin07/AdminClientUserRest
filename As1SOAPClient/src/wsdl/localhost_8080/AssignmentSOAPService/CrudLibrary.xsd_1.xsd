@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://Services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Services/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="Update" type="tns:Update"/>
+
+<xs:element name="UpdateResponse" type="tns:UpdateResponse"/>
+
+<xs:element name="addMovie" type="tns:addMovie"/>
+
+<xs:element name="addMovieResponse" type="tns:addMovieResponse"/>
+
+<xs:element name="delete" type="tns:delete"/>
+
+<xs:element name="deleteResponse" type="tns:deleteResponse"/>
+
+<xs:element name="getAllLib" type="tns:getAllLib"/>
+
+<xs:element name="getAllLibResponse" type="tns:getAllLibResponse"/>
+
+<xs:element name="getLib" type="tns:getLib"/>
+
+<xs:element name="getLibResponse" type="tns:getLibResponse"/>
+
+<xs:element name="library" type="tns:library"/>
+
+<xs:complexType name="getAllLib">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllLibResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:library" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="library">
+<xs:sequence>
+<xs:element name="cast" type="xs:string" minOccurs="0"/>
+<xs:element name="category" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="director" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="rating" type="xs:integer" minOccurs="0"/>
+<xs:element name="releasedon" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="thumbnail" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMovie">
+<xs:sequence>
+<xs:element name="arg0" type="tns:library" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addMovieResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delete">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Update">
+<xs:sequence>
+<xs:element name="arg0" type="tns:library" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLib">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLibResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:library" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

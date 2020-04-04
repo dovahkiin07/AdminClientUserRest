@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/css/materialize.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="https://cdn.rawgit.com/Dogfalo/materialize/fc44c862/dist/js/materialize.min.js"></script>
+        <link rel='stylesheet' type='text/css' href='index.css'>
+        <script src="index.js" type="text/javascript"></script>
+        <title>Admin</title>
+        <script>
+            function getData() {
+                fetch('http://localhost:8080/As1RESTService/resources/user/getAll')
+                        .then(function (response) {
+                            return response.json();
+                        }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var show = data[i];
+                        var commentDiv = document.createElement('tr');
+                        var b64String = btoa(String.fromCharCode.apply(null, new Uint8Array(show.thumbnail)));
+                        commentDiv.innerHTML = '<td>' + show.id + '</td><td>' + show.title + '</td><td>' + show.description + '</td>\n\
+                        <td><image src=data:image/jpg;base64,'+ b64String+' alt="No Image to show" width="50" height="50"></td>';
+                        document.getElementById('showsList').appendChild(commentDiv);
+                    }
+                    
+                });
+            }
+            $(document).ready(function () {
+                $("#myTable").on("click", "tr", function(e){
+                    var value = $(this).find('td:nth-child(1)').text();
+                    fetch('http://localhost:8080/As1RESTService/resources/user/all/' + value)
+                            .then(function (response) {
+                                return response.json();
+                            }).then(function (data) {
+                        document.getElementById('dataShow').innerHTML="";
+                        var commentDiv = document.createElement('div');
+                        var b64String = btoa(String.fromCharCode.apply(null, new Uint8Array(data.thumbnail)));
+                        commentDiv.innerHTML = '<image src=data:image/jpg;base64,'+ b64String+' alt="No Image to show" width="350" height="350">\n\
+                                <div>Title:         '+data.title+'</div>\n\
+                                <div>Description:   '+data.description+'</div>\n\
+                                <div>Type:          '+data.type+'</div>\n\
+                                <div>Category:      '+data.category+'</div>\n\
+                                <div>Director:      '+data.director+'</div>\n\
+                                <div>Rating:        '+data.rating+'</div>'
+                        document.getElementById('dataShow').appendChild(commentDiv);
+                    });
+                })
+            });
+        </script>
+    </head>
+    <body onload="getData();">
+        <h1>My Shows</h1>
+        <div id="app" class="grid">
+            <h1><b>Shows</b> 📄</h1>
+            <table id="myTable">
+              <thead>
+                <tr>
+                  <th>
+                    Id
+                  </th>
+                  <th>
+                    Title
+                  </th>
+                  <th id="desc">
+                    Description
+                  </th>
+                  <th>
+                    Thumbnail
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="showsList">
+                 
+              </tbody>
+            </table>
+            <div class="col-md-12 center text-center">
+	    <span class="left" id="total_reg"></span>
+            <ul class="pagination pager" id="myPager"></ul>
+          </div>
+            <div id="dataShow"></div>
+      </div>
+      </div>
+        <hr></div>
+
+
+    </body>
+</html>

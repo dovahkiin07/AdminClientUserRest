@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://as1admin.herokuapp.com/ShowCrud?wsdl" uri="wsdl/as1admin.herokuapp.com/ShowCrud.wsdl"/>
+    <system systemId="http://localhost:8080/AssignmentSOAPService/CrudLibrary?wsdl" uri="wsdl/localhost_8080/AssignmentSOAPService/CrudLibrary.wsdl"/>
+    <system systemId="http://localhost:8080/AssignmentSOAPService/CrudLibrary?xsd=1" uri="wsdl/localhost_8080/AssignmentSOAPService/CrudLibrary.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/As1SOAPService/ShowCrud?wsdl" uri="wsdl/localhost_8080/As1SOAPService/ShowCrud.wsdl"/>
+    <system systemId="http://localhost:8080/As1SOAPService/ShowCrud?xsd=1" uri="wsdl/localhost_8080/As1SOAPService/ShowCrud.xsd_1.xsd"/>
+</catalog>

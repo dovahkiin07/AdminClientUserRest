@@ -1,0 +1,16 @@
+com\mycompany\as1restservice\JAXRSConfiguration.class
+service\Add.class
+service\Delete.class
+service\FindByIdResponse.class
+service\GetAll.class
+service\package-info.class
+service\AddResponse.class
+service\FindById.class
+service\ObjectFactory.class
+service\ShowCrud_Service.class
+service\Shows.class
+com\mycompany\as1restservice\resources\JavaEE8Resource.class
+service\ShowCrud.class
+service\DeleteResponse.class
+com\mycompany\as1restservice\service\UserAccess.class
+service\GetAllResponse.class

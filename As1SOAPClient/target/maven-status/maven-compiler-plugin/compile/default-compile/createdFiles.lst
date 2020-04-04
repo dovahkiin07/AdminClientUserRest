@@ -1,0 +1,16 @@
+com\mycompany\as1soapclient\client\ObjectFactory.class
+com\mycompany\as1soapclient\client\AddResponse.class
+com\mycompany\as1soapclient\client\Delete.class
+com\mycompany\as1soapclient\client\GetAll.class
+com\mycompany\as1soapclient\resources\JavaEE8Resource.class
+com\mycompany\as1soapclient\client\Shows.class
+com\mycompany\as1soapclient\client\ShowCrud_Service.class
+com\mycompany\as1soapclient\client\package-info.class
+com\mycompany\as1soapclient\client\Add.class
+com\mycompany\as1soapclient\client\FindById.class
+com\mycompany\as1soapclient\servlet\MainServlet.class
+com\mycompany\as1soapclient\client\DeleteResponse.class
+com\mycompany\as1soapclient\client\ShowCrud.class
+com\mycompany\as1soapclient\client\FindByIdResponse.class
+com\mycompany\as1soapclient\JAXRSConfiguration.class
+com\mycompany\as1soapclient\client\GetAllResponse.class
